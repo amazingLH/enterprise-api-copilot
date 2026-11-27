@@ -1,0 +1,29 @@
+{
+  "version": "1.0.0",
+  "measurement_policy": "derive_from_evidence_linked_observations",
+  "project": "copilot",
+  "scope": {
+    "business_tools": 46,
+    "task_cases": 110,
+    "stop_cases": 41
+  },
+  "strata": {
+    "tasks": {
+      "single_tool": 40,
+      "multi_tool": 25,
+      "parameter_dependencies": 15,
+      "ambiguity": 10,
+      "permissions": 10,
+      "failures": 10
+    },
+    "stop_subset": {
+      "tool_unavailable": 8,
+      "parameters_unresolved": 8,
+      "invalid_parameters": 6,
+      "permission_denied": 6,
+      "cancelled": 5,
+      "loop_budget": 4,
+      "external_failure": 4
+    }
+  }
+}

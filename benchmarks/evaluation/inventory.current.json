@@ -1,0 +1,374 @@
+[
+  {
+    "tool_id": "updateStatus",
+    "method": "PUT",
+    "path": "/orders/updateOrderStatus",
+    "description": "更新订单状态",
+    "required": [],
+    "properties": {
+      "orderId": {
+        "type": "integer",
+        "description": "订单Id",
+        "format": "int64"
+      },
+      "newStatus": {
+        "type": "string",
+        "description": "订单新状态"
+      }
+    }
+  },
+  {
+    "tool_id": "querySuppliersByDeliveryRegion",
+    "method": "POST",
+    "path": "/suppliers/querySuppliersByDeliveryRegion",
+    "description": "根据配送区域查询供应商",
+    "required": [],
+    "properties": {
+      "region": {
+        "type": "string",
+        "description": "配送区域"
+      }
+    }
+  },
+  {
+    "tool_id": "addSuppliers",
+    "method": "POST",
+    "path": "/suppliers/addSuppliers",
+    "description": "添加供应商",
+    "required": [],
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "供应商名称"
+      },
+      "phone": {
+        "type": "string",
+        "description": "供应商电话"
+      },
+      "address": {
+        "type": "string",
+        "description": "供应商地址"
+      },
+      "deliveryAreas": {
+        "type": "array",
+        "description": "配送区域",
+        "items": {
+          "type": "string",
+          "description": "配送区域"
+        }
+      },
+      "rating": {
+        "type": "number",
+        "description": "供应商评分",
+        "format": "double"
+      },
+      "status": {
+        "type": "string",
+        "description": "供应商状态",
+        "enum": [
+          "InUse",
+          "DisUse"
+        ]
+      }
+    }
+  },
+  {
+    "tool_id": "updateProductSubstitutes",
+    "method": "POST",
+    "path": "/products/updateProductSubstitutes",
+    "description": "更新产品的替代产品",
+    "required": [],
+    "properties": {
+      "productId": {
+        "type": "integer",
+        "description": "产品Id",
+        "format": "int64"
+      },
+      "substituteName": {
+        "type": "string",
+        "description": "替代品名称"
+      }
+    }
+  },
+  {
+    "tool_id": "getBatchProductByProductIds",
+    "method": "POST",
+    "path": "/products/getBatchProductByProductIds",
+    "description": "根据一定范围的产品ID批量获取产品信息",
+    "required": [],
+    "properties": {
+      "startId": {
+        "type": "integer",
+        "description": "批量查询起始的产品ID",
+        "format": "int64"
+      },
+      "endId": {
+        "type": "integer",
+        "description": "批量查询终止的产品ID",
+        "format": "int64"
+      }
+    }
+  },
+  {
+    "tool_id": "updateProductInfo",
+    "method": "POST",
+    "path": "/products/updateProductDescription",
+    "description": "更新产品信息",
+    "required": [],
+    "properties": {
+      "productId": {
+        "type": "integer",
+        "description": "产品Id",
+        "format": "int64"
+      },
+      "description": {
+        "type": "string",
+        "description": "产品描述"
+      }
+    }
+  },
+  {
+    "tool_id": "getProductSubstitutes_1",
+    "method": "POST",
+    "path": "/products/getProductSubstitutesByName",
+    "description": "根据产品名称获取产品的替代产品",
+    "required": [],
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "产品名称"
+      }
+    }
+  },
+  {
+    "tool_id": "getProductSubstitutes",
+    "method": "POST",
+    "path": "/products/getProductSubstitutes",
+    "description": "根据产品ID获取产品的替代产品",
+    "required": [],
+    "properties": {
+      "productId": {
+        "type": "integer",
+        "description": "产品Id",
+        "format": "int64"
+      }
+    }
+  },
+  {
+    "tool_id": "getProductByName",
+    "method": "POST",
+    "path": "/products/getProductByName",
+    "description": "根据产品名称获取产品信息",
+    "required": [],
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "产品名称"
+      }
+    }
+  },
+  {
+    "tool_id": "getProduct",
+    "method": "POST",
+    "path": "/products/getProductById",
+    "description": "根据产品ID获取产品信息",
+    "required": [],
+    "properties": {
+      "productId": {
+        "type": "integer",
+        "description": "产品Id",
+        "format": "int64"
+      }
+    }
+  },
+  {
+    "tool_id": "addProduct",
+    "method": "POST",
+    "path": "/products/addProduct",
+    "description": "添加新产品",
+    "required": [],
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "产品名称"
+      },
+      "description": {
+        "type": "string",
+        "description": "产品描述"
+      },
+      "price": {
+        "type": "number",
+        "description": "产品价格",
+        "format": "double"
+      },
+      "quantityInStock": {
+        "type": "integer",
+        "description": "库存数量",
+        "format": "int32"
+      }
+    }
+  },
+  {
+    "tool_id": "getBySupplier",
+    "method": "POST",
+    "path": "/orders/getOrdersBySupplierId",
+    "description": "查询物流供应商配送的订单信息",
+    "required": [],
+    "properties": {
+      "supplierId": {
+        "type": "integer",
+        "description": "供应商Id",
+        "format": "int64"
+      }
+    }
+  },
+  {
+    "tool_id": "getOrderById",
+    "method": "POST",
+    "path": "/orders/getOrderByOrderId",
+    "description": "查询订单信息",
+    "required": [],
+    "properties": {
+      "orderId": {
+        "type": "integer",
+        "description": "订单Id",
+        "format": "int64"
+      }
+    }
+  },
+  {
+    "tool_id": "getByTimeRange",
+    "method": "POST",
+    "path": "/orders/getByTimeRange",
+    "description": "查询特定时间范围内的订单信息",
+    "required": [],
+    "properties": {
+      "startDate": {
+        "type": "string",
+        "description": "开始时间",
+        "format": "date-time"
+      },
+      "endDate": {
+        "type": "string",
+        "description": "结束时间",
+        "format": "date-time"
+      }
+    }
+  },
+  {
+    "tool_id": "getByProduct",
+    "method": "POST",
+    "path": "/orders/getByProductId",
+    "description": "查询特定产品的订单信息",
+    "required": [],
+    "properties": {
+      "productId": {
+        "type": "integer",
+        "description": "产品Id",
+        "format": "int64"
+      }
+    }
+  },
+  {
+    "tool_id": "getByStatus",
+    "method": "POST",
+    "path": "/orders/getByOrderStatus",
+    "description": "查询特定订单状态的订单信息",
+    "required": [],
+    "properties": {
+      "status": {
+        "type": "string",
+        "description": "订单状态"
+      }
+    }
+  },
+  {
+    "tool_id": "create",
+    "method": "POST",
+    "path": "/orders/createOrder",
+    "description": "创建订单",
+    "required": [],
+    "properties": {
+      "quantity": {
+        "type": "integer",
+        "description": "订单数量",
+        "format": "int32"
+      },
+      "supplierId": {
+        "type": "integer",
+        "description": "物流供应商Id",
+        "format": "int64"
+      },
+      "productId": {
+        "type": "integer",
+        "description": "产品Id",
+        "format": "int64"
+      },
+      "orderRegion": {
+        "type": "string",
+        "description": "订单配送区域"
+      }
+    }
+  },
+  {
+    "tool_id": "getSupplierByName",
+    "method": "GET",
+    "path": "/suppliers/getSupplierByStatus",
+    "description": "根据供应商状态查询物流供应商",
+    "required": [
+      "status"
+    ],
+    "properties": {
+      "status": {
+        "type": "string",
+        "enum": [
+          "InUse",
+          "DisUse"
+        ]
+      }
+    }
+  },
+  {
+    "tool_id": "getSupplier",
+    "method": "GET",
+    "path": "/suppliers/getSupplierByName",
+    "description": "根据供应商名字查询物流供应商",
+    "required": [
+      "supplierName"
+    ],
+    "properties": {
+      "supplierName": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "tool_id": "getSupplier_1",
+    "method": "GET",
+    "path": "/suppliers/getSupplierById/{supplierId}",
+    "description": "根据ID查询供应商",
+    "required": [
+      "supplierId"
+    ],
+    "properties": {
+      "supplierId": {
+        "type": "integer",
+        "format": "int64"
+      }
+    }
+  },
+  {
+    "tool_id": "cancelOrder",
+    "method": "DELETE",
+    "path": "/orders/cancelOrder",
+    "description": "取消订单",
+    "required": [],
+    "properties": {
+      "orderId": {
+        "type": "integer",
+        "description": "订单Id",
+        "format": "int64"
+      }
+    }
+  }
+]
